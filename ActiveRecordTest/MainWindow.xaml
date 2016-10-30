@@ -1,0 +1,73 @@
+﻿<Window x:Class="ActiveRecordTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="560" Width="819">
+    <Grid Loaded="OnLoaded">
+        <GroupBox Header="题目" Height="117" HorizontalAlignment="Left" Margin="70,0,0,0" Name="groupBox1" VerticalAlignment="Top" Width="299">
+            <Grid>
+                <Image Height="44" HorizontalAlignment="Right" Margin="0,6,124,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="64" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,62,98,0" Name="textBox1" VerticalAlignment="Top" Width="90" />
+                <Button Content="插入图片" Height="52" HorizontalAlignment="Left" Margin="2,0,0,0" Name="button1" VerticalAlignment="Top" Width="90" Click="InsertQuestionImage" />
+                <Button Content="插入文字" Height="23" HorizontalAlignment="Left" Margin="10,62,0,0" Name="button2" VerticalAlignment="Top" Width="63" Click="InsertQuestionText" />
+                <TextBlock Height="18" HorizontalAlignment="Left" Margin="167,12,0,0" Name="textBlock1" Text="TextBlock" VerticalAlignment="Top" Width="114" />
+                <TextBlock Height="17" HorizontalAlignment="Left" Margin="167,33,0,0" Name="textBlock3" Text="题序" VerticalAlignment="Top" Width="39" />
+                <CheckBox Content="允许自动加1" Height="16" HorizontalAlignment="Left" Margin="194,52,0,0" Name="checkBox1" VerticalAlignment="Top" Checked="checkBox1_Checked" Unchecked="checkBox1_UnChecked" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="答案" Height="115" HorizontalAlignment="Left" Margin="70,199,0,0" Name="groupBox2" VerticalAlignment="Top" Width="299">
+            <Grid>
+                <Image Height="38" HorizontalAlignment="Left" Margin="86,6,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="90" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="86,56,0,0" Name="textBox2" VerticalAlignment="Top" Width="120" />
+                <Button Content="插入图片" Height="18" HorizontalAlignment="Left" Margin="16,0,0,59" Name="button3" VerticalAlignment="Bottom" Width="52" Click="InsertAnswerImage" />
+                <Button Content="插入文字" HorizontalAlignment="Left" Margin="10,53,0,17" Name="button4" Width="63" Click="InsertAnswerText" />
+                <Button Content="插入答案图库加1" Height="55" HorizontalAlignment="Right" Margin="0,0,6,0" Name="button22" VerticalAlignment="Top" Width="95" Click="insertAnswerPicAndAddOneToDB" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="吐槽" Height="114" HorizontalAlignment="Left" Margin="74,365,0,0" Name="groupBox3" VerticalAlignment="Top" Width="289">
+            <Grid>
+                <TextBox Height="45" HorizontalAlignment="Left" Margin="9,9,0,0" Name="textBox3" VerticalAlignment="Top" Width="255" />
+                <Button Content="提交吐槽" Height="23" HorizontalAlignment="Left" Margin="169,60,0,0" Name="button7" VerticalAlignment="Top" Width="75" Click="AddComment" />
+            </Grid>
+        </GroupBox>
+        <TextBox Text="1" Height="21" HorizontalAlignment="Left" Margin="417,25,0,0" Name="textBox4" VerticalAlignment="Top" Width="72" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="377,28,0,0" Name="textBlock2" Text="题序：" VerticalAlignment="Top" />
+        <Button Content="题序加1" Height="23" HorizontalAlignment="Left" Margin="372,63,0,0" Name="button5" VerticalAlignment="Top" Width="75" Click="AddQuestionNumer" />
+        <Button Content="新增一条数据" Height="23" HorizontalAlignment="Left" Margin="372,106,0,0" Name="button6" VerticalAlignment="Top" Width="75" Click="AddNewData" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="372,175,0,0" Name="textBlock4" Text="数据总条数" VerticalAlignment="Top" />
+        <Button Content="获取数据总数" Height="23" HorizontalAlignment="Left" Margin="372,149,0,0" Name="button8" VerticalAlignment="Top" Width="75" Click="OnGetDataCount" />
+        <Button Content="A" Height="19" HorizontalAlignment="Left" Margin="100,320,0,0" Name="button9" VerticalAlignment="Top" Width="44" Click="button9_Click" />
+        <Button Content="B" Height="19" HorizontalAlignment="Left" Margin="150,320,0,0" Name="button10" VerticalAlignment="Top" Width="44" Click="button10_Click" />
+        <Button Content="C" Height="19" HorizontalAlignment="Left" Margin="202,320,0,0" Name="button11" VerticalAlignment="Top" Width="44" Click="button11_Click" />
+        <Button Content="D" Height="19" HorizontalAlignment="Left" Margin="262,320,0,0" Name="button12" VerticalAlignment="Top" Width="44" Click="button12_Click" />
+        <Button Content="英语课文" Height="23" HorizontalAlignment="Left" Margin="80,132,0,0" Name="button13" VerticalAlignment="Top" Width="75" Click="button13_Click" />
+        <Button Content="1" Height="20" HorizontalAlignment="Left" Margin="172,135,0,0" Name="button14" VerticalAlignment="Top" Width="22" Click="button14_Click" />
+        <Button Content="2" Height="20" HorizontalAlignment="Left" Margin="202,135,0,0" Name="button15" VerticalAlignment="Top" Width="22" Click="button15_Click" />
+        <Button Content="3" Height="20" HorizontalAlignment="Left" Margin="230,135,0,0" Name="button16" VerticalAlignment="Top" Width="22" Click="button16_Click" />
+        <Button Content="4" Height="20" HorizontalAlignment="Left" Margin="260,135,0,0" Name="button17" VerticalAlignment="Top" Width="22" Click="button17_Click" />
+        <Button Content="开启考试窗口" Height="32" HorizontalAlignment="Left" Margin="698,347,0,0" Name="StartExam" VerticalAlignment="Top" Width="81" Click="OpenExamSystem" />	
+        <GroupBox Header="查询单条结果" Height="249" HorizontalAlignment="Left" Margin="389,226,0,0" Name="groupBox4" VerticalAlignment="Top" Width="172">
+            <Grid>
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,38,0,0" Name="textBlock5" Text="QuestionText" VerticalAlignment="Top" />
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="6,6,0,0" Name="textBlock6" Text="QuestionID" VerticalAlignment="Top" />
+                <TextBox Height="22" HorizontalAlignment="Left" Margin="77,6,0,0" Name="textBox5" VerticalAlignment="Top" Width="69" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="82,38,0,0" Name="textBox6" VerticalAlignment="Top" Width="64" />
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="4,80,0,0" Name="textBlock7" Text="AnswerText" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="85,76,0,0" Name="textBox7" VerticalAlignment="Top" Width="63" />
+                <Button Content="查询ID
+" Height="23" HorizontalAlignment="Left" Margin="20,120,0,0" Name="button18" VerticalAlignment="Top" Width="75" Click="button18_Click" />
+                <Button Content="查询文本内容" Height="23" HorizontalAlignment="Left" Margin="19,153,0,0" Name="button19" VerticalAlignment="Top" Width="75" Click="button19_Click" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="数据库选择" Height="100" HorizontalAlignment="Left" Margin="585,385,0,0" Name="selectDataBase" VerticalAlignment="Top" Width="200">
+            <Grid>
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="6,6,0,0" Name="dataBaseNameInput" VerticalAlignment="Top" Width="120" />
+                <Button Content="跳转数据库" Height="23" HorizontalAlignment="Left" Margin="107,49,0,0" Name="jumpToDataBase" VerticalAlignment="Top" Width="75" Click="ChangeDataBase" />
+            </Grid>
+        </GroupBox>	
+	
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="89,165,0,0" Name="textBlock8" Text="前四个题号：" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="171,165,0,0" Name="textBlock9" Text="TextBlock" VerticalAlignment="Top" />
+        <Button Content="查询值填入" Height="23" HorizontalAlignment="Left" Margin="472,63,0,0" Name="button20" VerticalAlignment="Top" Width="71" Click="button20_Click" />
+        <Button Content="5" Height="20" HorizontalAlignment="Left" Margin="289,135,0,0" Name="button21" VerticalAlignment="Top" Width="22" Click="button21_Click" />
+    </Grid>
+</Window>

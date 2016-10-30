@@ -1,0 +1,69 @@
+﻿<Window x:Class="ActiveRecordTest.TopicViewerPC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TopicViewerPC" Height="600" Width="1200" Loaded="onLoaded" Closed="onClosed">
+    <Viewbox HorizontalAlignment="Left">
+        <Grid>
+            <ScrollViewer Height="600" Name="scrollViewer1" Width="1000" VerticalAlignment="Top" HorizontalAlignment="Left" TouchMove="onTouchMove">
+            
+                <StackPanel Name="stackPanel1">
+                    <TextBlock Height="23" HorizontalAlignment="Left" Name="textBlock1" Text="TextBlock" VerticalAlignment="Top" />
+                    <Image  HorizontalAlignment="Left"  Name="image1" Stretch="Fill" VerticalAlignment="Top" />
+                    <StackPanel Orientation="Horizontal">
+                         <Button Content="显示答案" VerticalAlignment="Top" HorizontalAlignment="Left" Height="60" Width="100" Name="button2"  Click="ShowAnswerContext" Margin="10,0" />
+                        <TextBlock Height="23" Name="textBlock6" Text="TextBlock" />
+                    </StackPanel>
+                    <GroupBox Visibility="Collapsed" VerticalAlignment="Top"  HorizontalAlignment="Left" Header="groupBox1"  Name="groupBox1" >
+                    <StackPanel Name="groupBoxGrid">
+                        <TextBlock  Name="textBlock2" Text="答案文字" />
+                        <Image Name="image2" Stretch="Fill" />
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+            <GroupBox Header="groupBox2" Width="219" Height="284" HorizontalAlignment="Left" Margin="1008,-1,0,0" Name="groupBox2" VerticalAlignment="Top">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="上一题" Height="60" HorizontalAlignment="Left" Name="button3" VerticalAlignment="Top" Width="75" Click="lastTopic" />
+                        <Button Content="下一题" Height="60" HorizontalAlignment="Left" Name="button4" VerticalAlignment="Top" Width="75" Margin="20,0,0,0" Click="nextTopic" />
+                    </StackPanel>
+                    <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Height="23" HorizontalAlignment="Left"  Name="textBlock4" Text="跳转题序" VerticalAlignment="Top" />
+                        <TextBox Height="20" HorizontalAlignment="Left" Name="textBox1" VerticalAlignment="Top" Width="77" Margin="20,0,0,0" />
+                    </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Width="100">
+                                <Button Content="上次做到位置" Height="23" Name="button9" Width="75" Click="GetLastTestPosition" />
+                            </StackPanel>
+
+                            <Button Content="跳转" Height="60" HorizontalAlignment="Right" Margin="20,0,0,0" Name="button5" VerticalAlignment="Top" Width="75" Click="jumpToDirectTopic" />
+
+                        </StackPanel>
+                        
+                    </StackPanel>
+                    <TextBlock Height="23" HorizontalAlignment="Center" Name="textBlock3" Text="TextBlock" VerticalAlignment="Top" Margin="10"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="显示题目" VerticalAlignment="Top" HorizontalAlignment="Left" Height="60" Name="button1" Width="100" Click="ShowTopicContext" />
+                        <CheckBox  Margin="10,0,0,0" Content="错题" Height="16" Name="checkBox1" Checked="onChecked" />
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="吐槽" HorizontalAlignment="Left" Margin="1005,297,0,0" Name="groupBox3" VerticalAlignment="Top">
+                <StackPanel>
+                    <ScrollViewer>
+                         <TextBox HorizontalAlignment="Left" Margin="2,0,0,0" Name="textBox2" VerticalAlignment="Top" Width="200" Height="200" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" />
+                    </ScrollViewer>
+                        <TextBlock Height="23" Name="textBlock5" Text="TextBlock" />
+                    <StackPanel Orientation="Horizontal">
+                    <Button Content="提交吐槽" Height="23" HorizontalAlignment="Left" Name="button6" VerticalAlignment="Top" Width="75" Click="submmitComment" />
+                    <Button Content="显示吐槽" Height="23" HorizontalAlignment="Left" Margin="50,0,0,0" Name="button7" VerticalAlignment="Top" Width="75" Click="ShowComment" />
+                    
+                    </StackPanel>
+                    <TextBlock Height="23" Name="textBlock7" Text="TextBlock" />
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+    </Viewbox>
+</Window>
