@@ -71,11 +71,22 @@ namespace ActiveRecordTest
             }
             else
             {
-                xmlPath = @"../../TestCases/ActiveRecordConfig.xml";
+                //xmlPath = @"../../TestCases/ActiveRecordConfig.xml";
+                xmlPath = @"../../TestCases/" + dataBaseName + @"Config.xml";
             }
 
-            XDocument xDoc = XDocument.Load(xmlPath);
-            dataBaseNameInput.Text = "logical Loaded";
+            XDocument xDoc = null;
+            if (File.Exists(xmlPath))
+            {
+                xDoc = XDocument.Load(xmlPath);
+                dataBaseNameInput.Text = "logical Loaded";
+            }
+            else
+            {
+                MessageBox.Show(xmlPath + @"该文件不存在，请确认文件及对应数据库已经创建");
+                Environment.Exit(0);
+            }
+
             
 
             var query = from xElement in xDoc.Descendants("config")
